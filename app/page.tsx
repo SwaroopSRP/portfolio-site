@@ -6,12 +6,12 @@ import Link from 'next/link'
 export default function Portfolio() {
   return (
     <div className="min-h-screen w-full bg-background text-foreground overflow-hidden dark">
-      {/* Main Grid Container - Non-scrollable full viewport */}
+      {}
       <div className="h-screen flex items-center justify-center px-6 md:px-12 lg:px-20">
         <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 lg:gap-24">
-          {/* LEFT SIDE - Name and Bio */}
+          {}
           <div className="flex flex-col justify-center space-y-8 md:space-y-12">
-            {/* Name */}
+            {}
             <div>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-2">
                 Pullabhatla
@@ -21,7 +21,7 @@ export default function Portfolio() {
               </h1>
             </div>
 
-            {/* Subtitle */}
+            {}
             <div className="space-y-4">
               <p className="text-xl md:text-2xl text-muted-foreground font-light">
                 I'm a Computer Science Engineering Student
@@ -31,18 +31,18 @@ export default function Portfolio() {
               </p>
             </div>
 
-            {/* Divider */}
+            {}
             <div className="h-px bg-border w-12" />
 
-            {/* CTA Text */}
+            {}
             <p className="text-sm md:text-base text-muted-foreground font-light tracking-wide">
               © SRP 2026
             </p>
           </div>
 
-          {/* RIGHT SIDE - Social Buttons */}
+          {}
           <div className="flex flex-col justify-center space-y-6 md:space-y-8">
-            {/* LinkedIn Button */}
+            {}
             <Link
               href="https://www.linkedin.com/in/swaroop-srp"
               target="_blank"
@@ -65,7 +65,7 @@ export default function Portfolio() {
               </span>
             </Link>
 
-            {/* GitHub Button */}
+            {}
             <Link
               href="https://github.com/SwaroopSRP"
               target="_blank"
@@ -88,7 +88,7 @@ export default function Portfolio() {
               </span>
             </Link>
 
-            {/* Email Contact */}
+            {}
             <div className="pt-4 md:pt-8">
               <p className="text-xs md:text-sm text-muted-foreground font-light tracking-wide mb-3">
                 Or reach out directly
@@ -104,7 +104,7 @@ export default function Portfolio() {
         </div>
       </div>
 
-      {/* Subtle Accent Line - Desktop only */}
+      {}
       <div className="hidden md:block fixed left-0 top-1/2 w-px h-1/3 bg-gradient-to-b from-transparent via-border to-transparent transform -translate-y-1/2" />
     </div>
   )
