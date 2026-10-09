@@ -44,7 +44,7 @@ export default function Portfolio() {
     <main ref={pageRef} className="dark portfolio-shell relative h-[100svh] w-full overflow-hidden bg-background text-foreground">
       <div aria-hidden="true" className="drizzle" />
       <div className="relative mx-auto flex h-full max-w-7xl flex-col px-6 py-7 sm:px-10 sm:py-9 md:px-14 lg:px-20">
-        <section className="grid min-h-0 flex-1 grid-cols-1 items-center gap-7 md:grid-cols-[1.08fr_0.92fr] md:gap-14 lg:gap-24">
+        <section className="grid min-h-0 flex-1 grid-cols-1 items-center gap-7 pb-8 md:grid-cols-[1.08fr_0.92fr] md:gap-14 md:pb-0 lg:gap-24">
           <div className="space-y-6 md:space-y-7">
             <div>
               <p className="entry-greeting mb-4 text-sm uppercase tracking-[0.28em] text-muted-foreground">Hello, I&apos;m</p>
@@ -53,19 +53,19 @@ export default function Portfolio() {
             <p className="entry-bio max-w-lg text-lg font-light leading-relaxed text-muted-foreground sm:text-xl">Student of Computer Science Engineering, passionate about technology and the possibilities it creates.</p>
           </div>
 
-          <div className="flex w-full max-w-xl flex-col gap-3 md:ml-auto">
+          <div className="mobile-contact-row mx-auto flex w-full max-w-xl flex-col gap-3 md:ml-auto md:mr-0">
             {links.map(({ label, detail, href, icon: Icon }) => (
-              <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined} onPointerDown={handleLinkPress} className="entry-link portfolio-link group relative flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-card/30 px-5 py-4 transition-transform duration-300 hover:scale-[1.025] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground sm:px-6 sm:py-5">
+              <a key={label} aria-label={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined} onPointerDown={handleLinkPress} className="entry-link portfolio-link group relative flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-card/30 px-5 py-4 transition-transform duration-300 hover:scale-[1.025] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground sm:px-6 sm:py-5">
                 <span className="sheen" aria-hidden="true" />
-                <Icon className="relative z-10 h-5 w-5 text-foreground/80" strokeWidth={1.7} />
-                <span className="relative z-10 min-w-0 flex-1"><span className="block text-lg font-medium text-foreground">{label}</span><span className="block truncate text-sm text-muted-foreground">{detail}</span></span>
-                <ArrowUpRight className="relative z-10 h-4 w-4 text-muted-foreground transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.7} />
+                <Icon className="link-icon relative z-10 h-5 w-5 text-foreground/80" strokeWidth={1.7} />
+                <span className="link-copy relative z-10 min-w-0 flex-1"><span className="block text-lg font-medium text-foreground">{label}</span><span className="block truncate text-sm text-muted-foreground">{detail}</span></span>
+                <ArrowUpRight className="link-arrow relative z-10 h-4 w-4 text-muted-foreground transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.7} />
               </a>
             ))}
           </div>
         </section>
 
-        <footer className="entry-footer flex shrink-0 items-center justify-center pt-4 text-sm text-muted-foreground sm:pt-6">
+        <footer className="entry-footer flex shrink-0 translate-y-2 items-center justify-center pt-4 text-sm text-muted-foreground sm:translate-y-0 sm:pt-6">
           <p>{'© SRP 2026'}</p>
         </footer>
       </div>
