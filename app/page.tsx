@@ -49,7 +49,7 @@ export default function Portfolio() {
             </svg>
           </div>
           <div className="srp-rain" aria-hidden="true">
-            {Array.from({ length: 30 }, (_, index) => <span key={index} style={{ '--i': index } as React.CSSProperties}>SRP</span>)}
+            {Array.from({ length: 42 }, (_, index) => <span key={index} style={{ left: `${(index % 14) * 7.7 - 2}%`, animationDelay: `${-(index % 9) * 0.55}s`, animationDuration: `${4.8 + (index % 5) * 0.45}s` }}>SRP</span>)}
           </div>
         </footer>
       </div>
