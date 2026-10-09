@@ -18,6 +18,7 @@
 .name-hover-target::after { content: ''; position: absolute; z-index: -1; right: -0.02em; bottom: -0.08em; width: 102%; height: 0.055em; border-radius: 0; background: #d8d8d8; clip-path: polygon(1.7% 0, 100% 0, 98.3% 100%, 0 100%); transform: skewX(-28deg) scaleX(0); transform-origin: left center; opacity: .96; filter: drop-shadow(0 0 5px rgba(255,255,255,.28)); transition: transform .28s cubic-bezier(.22,.8,.25,1), opacity .2s ease; }
 .name-hover-target:hover::after, .name-hover-target:focus-visible::after, .name-hover-target:active::after { transform: skewX(-28deg) scaleX(1); transform-origin: right center; opacity: 1; }
 .portfolio-link { transition-property: transform, border-color, background-color; }
+.portfolio-link:hover, .portfolio-link:focus-visible { border-color: rgba(245,245,245,.72); }
 .portfolio-link:active { transform: scale(.99); }
 .sheen { position: absolute; inset: -80% auto -80% -38%; z-index: 0; width: 24%; transform: translateX(-180%) skewX(-24deg); background: linear-gradient(90deg, transparent, rgba(255,255,255,.62), transparent); pointer-events: none; }
 .sheen-active { animation: sheen-swipe .42s cubic-bezier(.2,.8,.2,1) forwards; }
