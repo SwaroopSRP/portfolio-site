@@ -17,12 +17,19 @@ export default function Portfolio() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.to(nameRef.current, { backgroundPosition: '220% center', duration: 6, ease: 'none', repeat: -1 })
-      gsap.fromTo(logoLineRef.current, { strokeDashoffset: 320 }, { strokeDashoffset: 0, duration: 8, ease: 'none', repeat: -1 })
-      gsap.to(logoRef.current, { letterSpacing: '0.02em', duration: 3.5, ease: 'sine.inOut', repeat: -1, yoyo: true })
+      gsap.fromTo(logoLineRef.current, { strokeDashoffset: 440 }, { strokeDashoffset: 0, duration: 3.8, ease: 'none', repeat: -1 })
+      gsap.to(logoRef.current, { opacity: 0.76, duration: 2.2, ease: 'sine.inOut', repeat: -1, yoyo: true })
     })
     return () => ctx.revert()
   }, [])
+
+  const handleLinkPress = (event: React.PointerEvent<HTMLAnchorElement>) => {
+    const sheen = event.currentTarget.querySelector<HTMLElement>('.sheen')
+    if (!sheen) return
+    sheen.classList.remove('sheen-active')
+    void sheen.offsetWidth
+    sheen.classList.add('sheen-active')
+  }
 
   return (
     <main className="dark portfolio-shell relative h-[100svh] w-full overflow-hidden bg-background text-foreground">
@@ -39,7 +46,7 @@ export default function Portfolio() {
 
           <div className="flex w-full max-w-xl flex-col gap-3 md:ml-auto">
             {links.map(({ label, detail, href, icon: Icon }) => (
-              <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined} className="portfolio-link group relative flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-card/30 px-5 py-4 transition-transform duration-300 hover:scale-[1.025] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground sm:px-6 sm:py-5">
+              <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined} onPointerDown={handleLinkPress} className="portfolio-link group relative flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-card/30 px-5 py-4 transition-transform duration-300 hover:scale-[1.025] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground sm:px-6 sm:py-5">
                 <span className="sheen" aria-hidden="true" />
                 <Icon className="relative z-10 h-5 w-5 text-foreground/80" strokeWidth={1.7} />
                 <span className="relative z-10 min-w-0 flex-1"><span className="block text-base font-medium text-foreground">{label}</span><span className="block truncate text-xs text-muted-foreground">{detail}</span></span>
@@ -51,7 +58,6 @@ export default function Portfolio() {
 
         <footer className="relative shrink-0 pt-5 sm:pt-7">
           <div className="flex flex-col items-center gap-3 border-t border-border/60 pt-4 sm:flex-row sm:items-end sm:justify-between sm:pt-5">
-            <p className="text-xs text-muted-foreground">© SRP 2026</p>
             <div ref={logoRef} className="logo-mark relative select-none" aria-label="SRP">
               <svg className="logo-curve" viewBox="0 0 300 70" aria-hidden="true"><path ref={logoLineRef} d="M8 48 C54 4 93 4 132 40 S214 76 292 18" /></svg>
               <span>SRP</span>
