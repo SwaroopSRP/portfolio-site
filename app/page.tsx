@@ -1,8 +1,6 @@
 'use client'
 
-import { useLayoutEffect, useRef } from 'react'
 import { ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react'
-import gsap from 'gsap'
 
 const links = [
   { label: 'LinkedIn', detail: "Let's connect professionally", href: 'https://www.linkedin.com/in/swaroop-srp', icon: Linkedin },
@@ -11,18 +9,6 @@ const links = [
 ]
 
 export default function Portfolio() {
-  const logoRef = useRef<HTMLDivElement>(null)
-  const logoLineRef = useRef<SVGPathElement>(null)
-  const nameRef = useRef<HTMLHeadingElement>(null)
-
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(logoLineRef.current, { strokeDashoffset: 440 }, { strokeDashoffset: 0, duration: 3.8, ease: 'none', repeat: -1 })
-      gsap.to(logoRef.current, { opacity: 0.76, duration: 2.2, ease: 'sine.inOut', repeat: -1, yoyo: true })
-    })
-    return () => ctx.revert()
-  }, [])
-
   const handleLinkPress = (event: React.PointerEvent<HTMLAnchorElement>) => {
     const sheen = event.currentTarget.querySelector<HTMLElement>('.sheen')
     if (!sheen) return
@@ -39,7 +25,7 @@ export default function Portfolio() {
           <div className="space-y-6 md:space-y-7">
             <div>
               <p className="mb-4 text-xs uppercase tracking-[0.28em] text-muted-foreground">Hello, I&apos;m</p>
-              <h1 ref={nameRef} className="name-gradient text-[clamp(2.8rem,7vw,6.8rem)] font-semibold leading-[0.9] tracking-[-0.075em]">Pullabhatla<br />Ram Swaroop</h1>
+              <h1 className="name-gradient text-[clamp(2.8rem,7vw,6.8rem)] font-semibold leading-[0.9] tracking-[-0.075em]">Pullabhatla<br />Ram Swaroop</h1>
             </div>
             <p className="max-w-lg text-base font-light leading-relaxed text-muted-foreground sm:text-lg">Student of Computer Science Engineering, passionate about technology and the possibilities it creates.</p>
           </div>
@@ -56,11 +42,13 @@ export default function Portfolio() {
           </div>
         </section>
 
-        <footer className="relative shrink-0 pt-5 sm:pt-7">
-          <div className="flex flex-col items-center gap-3 border-t border-border/60 pt-4 sm:flex-row sm:items-end sm:justify-between sm:pt-5">
-            <div ref={logoRef} className="logo-mark relative select-none" aria-label="SRP">
-              <svg className="logo-curve" viewBox="0 0 300 70" aria-hidden="true"><path ref={logoLineRef} d="M8 48 C54 4 93 4 132 40 S214 76 292 18" /></svg>
+        <footer className="relative flex shrink-0 justify-center pt-5 sm:pt-7">
+          <div className="logo-stage relative flex justify-center border-t border-border/60 pt-4 sm:pt-5">
+            <div className="logo-mark relative select-none" aria-label="SRP">
               <span>SRP</span>
+              <span className="logo-outline" aria-hidden="true">SRP</span>
+              <span className="logo-trail logo-trail-one" aria-hidden="true" />
+              <span className="logo-trail logo-trail-two" aria-hidden="true" />
             </div>
           </div>
         </footer>
