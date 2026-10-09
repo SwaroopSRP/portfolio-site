@@ -12,7 +12,7 @@
 .portfolio-shell { isolation: isolate; }
 .drizzle { position: absolute; inset: -30%; pointer-events: none; opacity: .045; transform: rotate(-18deg); background-image: repeating-linear-gradient(104deg, transparent 0 48px, rgba(255,255,255,.08) 49px, transparent 50px 92px); -webkit-mask-image: linear-gradient(180deg, transparent, black 26%, black 72%, transparent); mask-image: linear-gradient(180deg, transparent, black 26%, black 72%, transparent); animation: drizzle-fall 14s linear infinite; }
 @keyframes drizzle-fall { from { background-position: 0 -160px; } to { background-position: 0 420px; } }
-.name-gradient { background: linear-gradient(112deg, #f5f5f5 0%, #b0b0b0 24%, #fafafa 50%, #858585 76%, #f5f5f5 100%, #b0b0b0 124%, #fafafa 150%, #858585 176%, #f5f5f5 200%); background-size: 200% 200%; background-clip: text; -webkit-background-clip: text; color: transparent; animation: name-flow 5.2s linear infinite; will-change: background-position; }
+.name-gradient { background: linear-gradient(112deg, #f5f5f5 0%, #a6a6a6 24%, #fafafa 50%, #707070 76%, #f5f5f5 100%, #a6a6a6 124%, #fafafa 150%, #707070 176%, #f5f5f5 200%); background-size: 200% 200%; background-clip: text; -webkit-background-clip: text; color: transparent; animation: name-flow 42s linear infinite; will-change: background-position; }
 @keyframes name-flow { from { background-position: 0% 0%; } to { background-position: 50% 50%; } }
 .portfolio-link { transition-property: transform, border-color, background-color; }
 .portfolio-link:active { transform: scale(.99); }
