@@ -42,17 +42,14 @@ export default function Portfolio() {
           </div>
         </section>
 
-        <footer className="relative flex shrink-0 justify-center pt-5 sm:pt-7">
-          <div className="logo-stage relative flex justify-center border-t border-border/60 pt-4 sm:pt-5">
-            <div className="logo-mark relative select-none" aria-label="SRP">
-              <span>SRP</span>
-              <span className="logo-outline" aria-hidden="true">SRP</span>
-              <svg className="logo-orbit" viewBox="0 0 760 240" aria-hidden="true">
-                <path className="logo-orbit-path" d="M42 120 L92 28 L668 28 L718 120 L668 212 L92 212 Z" />
-                <path className="logo-worm" d="M42 120 L92 28 L668 28 L718 120 L668 212 L92 212 Z" />
-                <path className="logo-curve-path" d="M18 148 C160 226 600 226 742 148" />
-              </svg>
-            </div>
+        <footer className="relative flex min-h-0 shrink-0 flex-col justify-end pt-4 sm:pt-6">
+          <div className="footer-curve" aria-hidden="true">
+            <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
+              <path className="footer-worm" d="M-20 52 C130 4 190 92 330 48 S560 8 700 50 S930 94 1220 38" />
+            </svg>
+          </div>
+          <div className="srp-rain" aria-hidden="true">
+            {Array.from({ length: 30 }, (_, index) => <span key={index} style={{ '--i': index } as React.CSSProperties}>SRP</span>)}
           </div>
         </footer>
       </div>
