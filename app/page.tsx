@@ -53,7 +53,7 @@ export default function Portfolio() {
             <p className="entry-bio max-w-lg text-lg font-light leading-relaxed text-muted-foreground sm:text-xl">Student of Computer Science Engineering, passionate about technology and the possibilities it creates.</p>
           </div>
 
-          <div className="mx-auto flex w-full max-w-xl flex-col gap-3 md:ml-auto md:mr-0">
+          <div className="mobile-contact-row mx-auto flex w-full max-w-xl flex-col gap-3 md:ml-auto md:mr-0">
             {links.map(({ label, detail, href, icon: Icon }) => (
               <a key={label} aria-label={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined} onPointerDown={handleLinkPress} className="entry-link portfolio-link group relative flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-card/30 px-5 py-4 transition-transform duration-300 hover:scale-[1.025] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground sm:px-6 sm:py-5">
                 <span className="sheen" aria-hidden="true" />
