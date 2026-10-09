@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="SRP favicon">
+  <rect width="64" height="64" rx="10" fill="#050505"/>
+  <g fill="none" stroke="#d9d9d9" stroke-width="1.15" opacity=".95" transform="rotate(-32 32 32)">
+    <text x="-8" y="16" fill="#d9d9d9" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" letter-spacing="1">SRP SRP SRP</text>
+    <text x="-8" y="30" fill="#d9d9d9" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" letter-spacing="1">SRP SRP SRP</text>
+    <text x="-8" y="44" fill="#d9d9d9" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" letter-spacing="1">SRP SRP SRP</text>
+    <text x="-8" y="58" fill="#d9d9d9" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" letter-spacing="1">SRP SRP SRP</text>
+  </g>
+  <rect x="1" y="1" width="62" height="62" rx="9" fill="none" stroke="#3a3a3a"/>
+</svg>
