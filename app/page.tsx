@@ -42,19 +42,8 @@ export default function Portfolio() {
           </div>
         </section>
 
-        <footer className="relative flex min-h-0 shrink-0 flex-col justify-end pt-4 sm:pt-6">
-          <div className="footer-curve" aria-hidden="true">
-            <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
-              <path className="footer-worm" d="M-20 52 C130 4 190 92 330 48 S560 8 700 50 S930 94 1220 38" />
-            </svg>
-          </div>
-          <div className="srp-rain" aria-hidden="true">
-            {Array.from({ length: 9 }, (_, row) => (
-              <div className="srp-rain-row" key={row} style={{ '--row': row } as React.CSSProperties}>
-                {Array.from({ length: 10 }, (_, column) => <span key={column}>SRP</span>)}
-              </div>
-            ))}
-          </div>
+        <footer className="flex shrink-0 items-center justify-center pt-4 text-xs text-muted-foreground sm:pt-6">
+          <p>{'© SRP 2026'}</p>
         </footer>
       </div>
     </main>
