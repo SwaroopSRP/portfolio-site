@@ -46,5 +46,5 @@
 @keyframes orbit-worm { to { stroke-dashoffset: -1050; } }
 @keyframes curve-flow { to { stroke-dashoffset: -280; } }
 footer { padding-bottom: 0 !important; }
-@media (max-width: 767px) { .logo-mark { font-size: clamp(4rem, 20vw, 6rem); letter-spacing: .08em; transform: scaleX(1.04); } .logo-stage { width: 100%; } .logo-orbit { width: 185%; height: 158%; } .portfolio-shell section > div:last-child { align-items: center; } .portfolio-shell .portfolio-link { width: calc(100% - 8px); align-self: center; } }
+@media (max-width: 767px) { .logo-mark { font-size: clamp(4rem, 20vw, 6rem); letter-spacing: .08em; transform: scaleX(1.04); } .logo-stage { width: 100%; } .logo-orbit { width: 185%; height: 158%; } .portfolio-shell section { width: 100%; align-items: center; gap: 2rem; } .portfolio-shell section > div { min-width: 0; width: 100%; } .portfolio-shell section > div:last-child { align-items: center; max-width: 100%; padding-inline: .5rem; } .portfolio-shell .portfolio-link { width: 100%; align-self: center; } .portfolio-shell footer { margin-top: 1.25rem; height: 5rem; } }
 @media (prefers-reduced-motion: reduce) { .drizzle, .name-gradient, .footer-worm, .srp-rain-row { animation: none !important; } }
