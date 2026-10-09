@@ -24,10 +24,10 @@ export default function Portfolio() {
         <section className="grid min-h-0 flex-1 grid-cols-1 items-center gap-7 md:grid-cols-[1.08fr_0.92fr] md:gap-14 lg:gap-24">
           <div className="space-y-6 md:space-y-7">
             <div>
-              <p className="mb-4 text-xs uppercase tracking-[0.28em] text-muted-foreground">Hello, I&apos;m</p>
+              <p className="mb-4 text-sm uppercase tracking-[0.28em] text-muted-foreground">Hello, I&apos;m</p>
               <h1 className="name-gradient text-[clamp(2.8rem,7vw,6.8rem)] font-semibold leading-[0.9] tracking-[-0.075em]">Pullabhatla<br />Ram Swaroop</h1>
             </div>
-            <p className="max-w-lg text-base font-light leading-relaxed text-muted-foreground sm:text-lg">Student of Computer Science Engineering, passionate about technology and the possibilities it creates.</p>
+            <p className="max-w-lg text-lg font-light leading-relaxed text-muted-foreground sm:text-xl">Student of Computer Science Engineering, passionate about technology and the possibilities it creates.</p>
           </div>
 
           <div className="flex w-full max-w-xl flex-col gap-3 md:ml-auto">
@@ -35,14 +35,14 @@ export default function Portfolio() {
               <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined} onPointerDown={handleLinkPress} className="portfolio-link group relative flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-card/30 px-5 py-4 transition-transform duration-300 hover:scale-[1.025] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground sm:px-6 sm:py-5">
                 <span className="sheen" aria-hidden="true" />
                 <Icon className="relative z-10 h-5 w-5 text-foreground/80" strokeWidth={1.7} />
-                <span className="relative z-10 min-w-0 flex-1"><span className="block text-base font-medium text-foreground">{label}</span><span className="block truncate text-xs text-muted-foreground">{detail}</span></span>
+                <span className="relative z-10 min-w-0 flex-1"><span className="block text-lg font-medium text-foreground">{label}</span><span className="block truncate text-sm text-muted-foreground">{detail}</span></span>
                 <ArrowUpRight className="relative z-10 h-4 w-4 text-muted-foreground transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.7} />
               </a>
             ))}
           </div>
         </section>
 
-        <footer className="flex shrink-0 items-center justify-center pt-4 text-xs text-muted-foreground sm:pt-6">
+        <footer className="flex shrink-0 items-center justify-center pt-4 text-sm text-muted-foreground sm:pt-6">
           <p>{'© SRP 2026'}</p>
         </footer>
       </div>
