@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="10" fill="#050505"/>
-  <g transform="translate(32 34) rotate(-28) translate(-32 -34)">
-    <text x="32" y="43" text-anchor="middle" fill="#f2f2f2" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="800" letter-spacing="-1.5">SRP</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="92" fill="#050505"/>
+  <g transform="rotate(-18 256 256)">
+    <text x="256" y="310" text-anchor="middle" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="184" font-weight="900" letter-spacing="-12" fill="#fff">SRP</text>
   </g>
 </svg>
