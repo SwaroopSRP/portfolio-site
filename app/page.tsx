@@ -1,111 +1,35 @@
 'use client'
 
-import { Github, Linkedin } from 'lucide-react'
-import Link from 'next/link'
+import { useLayoutEffect, useRef } from 'react'
+import { ArrowUpRight, Github, Linkedin, Mail } from 'lucide-react'
+import gsap from 'gsap'
+
+const links = [
+  { label: 'LinkedIn', detail: "Let's connect professionally", href: 'https://www.linkedin.com/in/swaroop-srp', icon: Linkedin },
+  { label: 'GitHub', detail: 'Explore my projects & code', href: 'https://github.com/SwaroopSRP', icon: Github },
+  { label: 'Email', detail: 'Start a conversation', href: 'mailto:srp31.swaroop@gmail.com', icon: Mail },
+]
 
 export default function Portfolio() {
+  const logoRef = useRef<HTMLDivElement>(null)
+  const nameRef = useRef<HTMLSpanElement>(null)
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to(logoRef.current, { y: -10, rotation: -1.5, duration: 4.5, ease: 'sine.inOut', repeat: -1, yoyo: true })
+      gsap.to(nameRef.current, { backgroundPosition: '200% center', duration: 5, ease: 'none', repeat: -1 })
+    })
+    return () => ctx.revert()
+  }, [])
   return (
-    <div className="min-h-screen w-full bg-background text-foreground overflow-hidden dark">
-      {/* Main Grid Container - Non-scrollable full viewport */}
-      <div className="h-screen flex items-center justify-center px-6 md:px-12 lg:px-20">
-        <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 lg:gap-24">
-          {/* LEFT SIDE - Name and Bio */}
-          <div className="flex flex-col justify-center space-y-8 md:space-y-12">
-            {/* Name */}
-            <div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-2">
-                Pullabhatla
-              </h1>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
-                Ram Swaroop
-              </h1>
-            </div>
-
-            {/* Subtitle */}
-            <div className="space-y-4">
-              <p className="text-xl md:text-2xl text-muted-foreground font-light">
-                Computer Science Engineering Student
-              </p>
-              <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-md">
-                Passionate about technology, passionate about building. Always learning, always creating.
-              </p>
-            </div>
-
-            {/* Divider */}
-            <div className="h-px bg-border w-12" />
-
-            {/* CTA Text */}
-            <p className="text-sm md:text-base text-muted-foreground font-light tracking-wide">
-              Connect with me below
-            </p>
-          </div>
-
-          {/* RIGHT SIDE - Social Buttons */}
-          <div className="flex flex-col justify-center space-y-6 md:space-y-8">
-            {/* LinkedIn Button */}
-            <Link
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-4 px-8 py-5 md:px-10 md:py-6 border border-border rounded-lg hover:border-accent transition-all duration-300 hover:bg-accent hover:bg-opacity-5"
-            >
-              <Linkedin className="w-6 h-6 md:w-7 md:h-7 text-foreground group-hover:text-accent transition-colors" />
-              <div className="flex flex-col">
-                <span className="text-lg md:text-xl font-semibold text-foreground group-hover:text-accent transition-colors">
-                  LinkedIn
-                </span>
-                <span className="text-xs md:text-sm text-muted-foreground">
-                  Let&apos;s connect professionally
-                </span>
-              </div>
-              <span className="absolute right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <svg className="w-5 h-5 md:w-6 md:h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
-                </svg>
-              </span>
-            </Link>
-
-            {/* GitHub Button */}
-            <Link
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-4 px-8 py-5 md:px-10 md:py-6 border border-border rounded-lg hover:border-accent transition-all duration-300 hover:bg-accent hover:bg-opacity-5"
-            >
-              <Github className="w-6 h-6 md:w-7 md:h-7 text-foreground group-hover:text-accent transition-colors" />
-              <div className="flex flex-col">
-                <span className="text-lg md:text-xl font-semibold text-foreground group-hover:text-accent transition-colors">
-                  GitHub
-                </span>
-                <span className="text-xs md:text-sm text-muted-foreground">
-                  Explore my projects & code
-                </span>
-              </div>
-              <span className="absolute right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <svg className="w-5 h-5 md:w-6 md:h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
-                </svg>
-              </span>
-            </Link>
-
-            {/* Email Contact */}
-            <div className="pt-4 md:pt-8">
-              <p className="text-xs md:text-sm text-muted-foreground font-light tracking-wide mb-3">
-                Or reach out directly
-              </p>
-              <a
-                href="mailto:your.email@example.com"
-                className="text-base md:text-lg font-light text-foreground hover:text-accent transition-colors duration-300 underline underline-offset-4 decoration-border hover:decoration-accent"
-              >
-                your.email@example.com
-              </a>
-            </div>
-          </div>
-        </div>
+    <main className="dark h-[100svh] w-full overflow-hidden bg-background text-foreground">
+      <div className="mx-auto flex h-full max-w-7xl flex-col px-6 py-6 sm:px-10 sm:py-8 md:px-14 lg:px-20">
+        <header className="flex justify-between border-b border-border/60 pb-5 text-xs uppercase tracking-[0.25em] text-muted-foreground"><span>SRP / 2026</span><span>Portfolio</span></header>
+        <section className="grid min-h-0 flex-1 grid-cols-1 items-center gap-8 py-8 md:grid-cols-[1.1fr_0.9fr] md:gap-16 lg:gap-24">
+          <div className="space-y-7"><div><p className="mb-4 text-xs uppercase tracking-[0.28em] text-muted-foreground">Hello, I&apos;m</p><h1 className="text-[clamp(2.8rem,7vw,6.8rem)] font-semibold leading-[0.92] tracking-[-0.07em]">Pullabhatla<span ref={nameRef} className="block bg-[linear-gradient(110deg,#f5f5f5_10%,#737373_35%,#fff_50%,#737373_65%,#f5f5f5_90%)] bg-[length:220%_100%] bg-clip-text text-transparent">Ram Swaroop</span></h1></div><div className="max-w-lg space-y-3"><p className="text-base font-light leading-relaxed text-muted-foreground sm:text-lg">Student of Computer Science Engineering, passionate about technology and the possibilities it creates.</p><p className="text-sm text-muted-foreground/70">Always learning. Always building.</p></div><div className="h-px w-14 bg-foreground/60" /><p className="text-xs uppercase tracking-[0.24em] text-muted-foreground">Open to ideas &amp; collaborations</p></div>
+          <div className="flex w-full max-w-xl flex-col gap-3 md:ml-auto">{links.map(({ label, detail, href, icon: Icon }) => <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined} className="group flex items-center gap-4 rounded-xl border border-border bg-card/30 px-5 py-4 transition-all duration-300 hover:border-foreground hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground sm:px-6 sm:py-5"><Icon className="h-5 w-5 text-foreground group-hover:text-background" /><span className="min-w-0 flex-1"><span className="block text-base font-medium text-foreground group-hover:text-background">{label}</span><span className="block truncate text-xs text-muted-foreground group-hover:text-background/70">{detail}</span></span><ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-background" /></a>)}</div>
+        </section>
+        <footer className="border-t border-border/60 pt-5"><div className="flex items-end justify-between"><div><p className="mb-3 text-xs text-muted-foreground">© SRP 2026</p><p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground/70">Built with curiosity</p></div><div ref={logoRef} aria-label="SRP" className="select-none text-[clamp(4.5rem,16vw,12rem)] font-black leading-[0.62] tracking-[-0.13em]">SRP</div></div></footer>
       </div>
-
-      {/* Subtle Accent Line - Desktop only */}
-      <div className="hidden md:block fixed left-0 top-1/2 w-px h-1/3 bg-gradient-to-b from-transparent via-border to-transparent transform -translate-y-1/2" />
-    </div>
+    </main>
   )
 }
