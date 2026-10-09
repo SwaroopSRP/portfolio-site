@@ -55,11 +55,11 @@ export default function Portfolio() {
 
           <div className="mx-auto flex w-full max-w-xl flex-col gap-3 md:ml-auto md:mr-0">
             {links.map(({ label, detail, href, icon: Icon }) => (
-              <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined} onPointerDown={handleLinkPress} className="entry-link portfolio-link group relative flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-card/30 px-5 py-4 transition-transform duration-300 hover:scale-[1.025] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground sm:px-6 sm:py-5">
+              <a key={label} aria-label={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined} onPointerDown={handleLinkPress} className="entry-link portfolio-link group relative flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-card/30 px-5 py-4 transition-transform duration-300 hover:scale-[1.025] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground sm:px-6 sm:py-5">
                 <span className="sheen" aria-hidden="true" />
-                <Icon className="relative z-10 h-5 w-5 text-foreground/80" strokeWidth={1.7} />
-                <span className="relative z-10 min-w-0 flex-1"><span className="block text-lg font-medium text-foreground">{label}</span><span className="block truncate text-sm text-muted-foreground">{detail}</span></span>
-                <ArrowUpRight className="relative z-10 h-4 w-4 text-muted-foreground transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.7} />
+                <Icon className="link-icon relative z-10 h-5 w-5 text-foreground/80" strokeWidth={1.7} />
+                <span className="link-copy relative z-10 min-w-0 flex-1"><span className="block text-lg font-medium text-foreground">{label}</span><span className="block truncate text-sm text-muted-foreground">{detail}</span></span>
+                <ArrowUpRight className="link-arrow relative z-10 h-4 w-4 text-muted-foreground transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" strokeWidth={1.7} />
               </a>
             ))}
           </div>
