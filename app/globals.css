@@ -12,19 +12,24 @@
 .portfolio-shell { isolation: isolate; }
 .drizzle { position: absolute; inset: -30%; pointer-events: none; opacity: .16; transform: rotate(-18deg); background-image: repeating-linear-gradient(104deg, transparent 0 48px, rgba(255,255,255,.16) 49px, transparent 50px 92px); -webkit-mask-image: linear-gradient(180deg, transparent, black 26%, black 72%, transparent); mask-image: linear-gradient(180deg, transparent, black 26%, black 72%, transparent); animation: drizzle-fall 14s linear infinite; }
 @keyframes drizzle-fall { from { background-position: 0 -160px; } to { background-position: 0 420px; } }
-.name-gradient { background: linear-gradient(112deg, #f5f5f5 0%, #9b9b9b 24%, #ffffff 48%, #858585 72%, #f5f5f5 100%); background-size: 240% 100%; background-clip: text; color: transparent; animation: name-flow 8s ease-in-out infinite alternate; will-change: background-position; }
+.name-gradient { background: linear-gradient(112deg, #f5f5f5 0%, #9b9b9b 24%, #ffffff 48%, #858585 72%, #f5f5f5 100%); background-size: 240% 100%; background-clip: text; color: transparent; animation: name-flow 6.8s linear infinite; will-change: background-position; }
 @keyframes name-flow { from { background-position: 0% center; } to { background-position: 100% center; } }
 .portfolio-link { transition-property: transform, border-color, background-color; }
 .portfolio-link:active { transform: scale(.99); }
 .sheen { position: absolute; inset: -80% auto -80% -38%; z-index: 0; width: 24%; transform: translateX(-180%) skewX(-24deg); background: linear-gradient(90deg, transparent, rgba(255,255,255,.62), transparent); pointer-events: none; }
 .sheen-active { animation: sheen-swipe .42s cubic-bezier(.2,.8,.2,1) forwards; }
 @keyframes sheen-swipe { to { transform: translateX(700%) skewX(-24deg); } }
-.logo-stage { width: min(94vw, 720px); }
-.logo-mark { position: relative; width: max-content; font-family: 'Orbitron', sans-serif; font-size: clamp(5.5rem, 17vw, 10rem); font-weight: 800; line-height: .66; letter-spacing: .055em; color: transparent; background: linear-gradient(to bottom, #f0f0f0 0%, #b8b8b8 42%, #555 100%); background-clip: text; -webkit-background-clip: text; text-shadow: 0 0 22px rgba(220,220,220,.12); }
-.logo-outline { position: absolute; inset: 0; color: transparent; -webkit-text-stroke: 1px rgba(235,235,235,.52); opacity: .7; pointer-events: none; }
-.logo-trail { position: absolute; left: 50%; width: 132%; height: 9px; border-radius: 999px; background: linear-gradient(90deg, transparent, rgba(232,232,232,.95) 48%, transparent); filter: drop-shadow(0 0 6px rgba(220,220,220,.45)); transform: translateX(-50%) skewX(-28deg); pointer-events: none; }
-.logo-trail-one { top: 25%; animation: trail-sweep 2.6s cubic-bezier(.55,.05,.25,1) infinite; }
-.logo-trail-two { top: 64%; opacity: .55; animation: trail-sweep 2.6s cubic-bezier(.55,.05,.25,1) 1.2s infinite; }
-@keyframes trail-sweep { 0%, 12% { clip-path: inset(0 100% 0 0); opacity: 0; } 35% { clip-path: inset(0 30% 0 0); opacity: .95; } 62% { clip-path: inset(0 0 0 35%); opacity: .75; } 100% { clip-path: inset(0 0 0 100%); opacity: 0; } }
-@media (max-width: 767px) { .logo-mark { font-size: clamp(4rem, 20vw, 6rem); } .logo-stage { width: 100%; } }
+.logo-stage { width: min(96vw, 820px); padding-bottom: 0; }
+.logo-mark { position: relative; width: max-content; font-family: 'Ethnocentric', 'Orbitron', sans-serif; font-size: clamp(5.5rem, 18vw, 11rem); font-weight: 800; line-height: .66; letter-spacing: .12em; color: transparent; background: linear-gradient(to bottom, #f6f6f6 0%, #c4c4c4 42%, #555 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-stroke: 1px rgba(232,232,232,.28); text-shadow: 0 0 22px rgba(220,220,220,.12); transform: scaleX(1.16); transform-origin: center bottom; }
+.logo-outline { position: absolute; inset: 0; color: transparent; -webkit-text-stroke: 1.2px rgba(245,245,245,.58); opacity: .82; pointer-events: none; }
+.logo-mark > span:not(.logo-outline) { position: relative; z-index: 1; }
+.logo-orbit { position: absolute; z-index: 0; left: 50%; top: 50%; width: 170%; height: 148%; overflow: visible; transform: translate(-50%, -50%); pointer-events: none; }
+.logo-orbit-path, .logo-worm, .logo-curve-path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.logo-orbit-path { stroke: rgba(220,220,220,.16); stroke-width: 1.5; }
+.logo-worm { stroke: rgba(242,242,242,.95); stroke-width: 4; stroke-dasharray: 24 480; filter: drop-shadow(0 0 7px rgba(220,220,220,.55)); animation: orbit-worm 3.8s linear infinite; }
+.logo-curve-path { stroke: rgba(205,205,205,.72); stroke-width: 3; stroke-dasharray: 34 22 180 22; filter: drop-shadow(0 0 5px rgba(220,220,220,.3)); animation: curve-flow 2.8s linear infinite; }
+@keyframes orbit-worm { to { stroke-dashoffset: -1050; } }
+@keyframes curve-flow { to { stroke-dashoffset: -280; } }
+footer { padding-bottom: 0 !important; }
+@media (max-width: 767px) { .logo-mark { font-size: clamp(4rem, 20vw, 6rem); letter-spacing: .08em; transform: scaleX(1.04); } .logo-stage { width: 100%; } .logo-orbit { width: 185%; height: 158%; } }
 @media (prefers-reduced-motion: reduce) { .drizzle, .name-gradient, .logo-trail-one, .logo-trail-two { animation: none !important; } }

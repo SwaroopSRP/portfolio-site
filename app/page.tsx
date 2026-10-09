@@ -47,8 +47,11 @@ export default function Portfolio() {
             <div className="logo-mark relative select-none" aria-label="SRP">
               <span>SRP</span>
               <span className="logo-outline" aria-hidden="true">SRP</span>
-              <span className="logo-trail logo-trail-one" aria-hidden="true" />
-              <span className="logo-trail logo-trail-two" aria-hidden="true" />
+              <svg className="logo-orbit" viewBox="0 0 760 240" aria-hidden="true">
+                <path className="logo-orbit-path" d="M42 120 L92 28 L668 28 L718 120 L668 212 L92 212 Z" />
+                <path className="logo-worm" d="M42 120 L92 28 L668 28 L718 120 L668 212 L92 212 Z" />
+                <path className="logo-curve-path" d="M18 148 C160 226 600 226 742 148" />
+              </svg>
             </div>
           </div>
         </footer>
