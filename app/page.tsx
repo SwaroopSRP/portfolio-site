@@ -48,7 +48,7 @@ export default function Portfolio() {
           <div className="space-y-6 md:space-y-7">
             <div>
               <p className="entry-greeting mb-4 text-sm uppercase tracking-[0.28em] text-muted-foreground">Hello, I&apos;m</p>
-              <h1 className="entry-name name-gradient text-[clamp(2.8rem,7vw,6.8rem)] font-semibold leading-[0.9] tracking-[-0.075em]">Pullabhatla<br />Ram Swaroop</h1>
+              <h1 className="entry-name name-gradient text-[clamp(2.8rem,7vw,6.8rem)] font-semibold leading-[0.9] tracking-[-0.075em]">Pullabhatla<br />Ram <span className="name-hover-target">Swaroop</span></h1>
             </div>
             <p className="entry-bio max-w-lg text-lg font-light leading-relaxed text-muted-foreground sm:text-xl">Student of Computer Science Engineering, passionate about technology and the possibilities it creates.</p>
           </div>
